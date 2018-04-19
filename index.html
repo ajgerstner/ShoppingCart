@@ -1,1 +1,109 @@
-<p>test</p>
+<!DOCTYPE html>
+<html lang ="en">
+	<head>
+		<meta charset ="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+		<title>Shoppign Cart</title>
+   <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+   
+	<section id="product">
+	    <h1>Product Name</h1>
+	    <img src="" alt="picture of shirt">
+	    <p id="productCost">$20.00</p>
+	    <section>
+	        <h3>Select size</h3>
+	        <section id = "size">
+	            <button type="button" id="small" >S</button>
+	            <button type="button" id="medium" >M</button>
+	            <button type="button" id="large">L</button>
+	        </section>
+	    </section>
+	       <section>
+	        <h3>Select a color</h3>
+	        <section id = "color">
+	            <button type="button" id="green" ></button>
+	            <button type="button" id="red" ></button>
+	            <button type="button" id="black"></button>
+	            <button type="button" id="blue"></button>
+	        </section>
+	    </section>
+	</section>
+	
+	<section id="shipping">
+    <form>
+           <div class="form">
+             <label for="name">Full Name</label>
+             <input type="text" id="name" required/>
+           </div>
+           <div class="form">
+             <label for="email">Email</label>
+             <input type="email" id="email" required/>
+           </div>
+           <div class="form">
+             <label for="address1">Address 1</label>
+             <input type="text" id="address1" required/>
+
+             <label for="address2">Address 2</label>
+             <input type="text" id="address2" required/>
+           </div>
+           <div class="form">
+             <label for="city">City</label>
+             <input type="text" id="city" required/>
+             <label for="state">State</label>
+             <input type="text" id="state" required/>
+             <label for="state">Zip</label>
+             <input type="text" id="zip" required/>
+           </div>
+           <div class="form">
+               <select name="county" >
+                  <option value="USA">USA</option>
+                  <option value="Mexico">Mexico</option>
+                  <option value="Canada">Canada</option>
+              </select>
+           </div>
+    </form>
+	    
+	</section>
+	
+	<section>
+	    <h1>Order Summary</h1>
+	    <div class="oderProductDetails">
+            <p>Product Name </p>
+            <p id="orderProduct"></p>
+            <p>$20.00</p>
+            
+	    </div>
+	    <div class="oderProductDetails">
+            <p id="orderShipping">Shipping </p>
+            <p>Free</p>
+            
+	    </div>
+	   <div class="oderProductDetails">
+            <p>Total </p>
+            <p>$20.00</p>
+            
+	    </div>
+        <div class="oderProductDetails">
+            <p>Shipping Address</p>
+            <p id="orderName"></p>
+            <p id="orderAddress"></p>
+            <p id="orderCityStateZip"></p>
+	    </div>
+	    
+	    <button type="submit" id="completeOrderButton" >Complete Order</button>
+	</section>
+	
+	
+		<footer>
+         
+		</footer>
+		
+		<script src=""></script>
+		
+	</body>
+	
+</html>
