@@ -1,2 +1,87 @@
-p {
-  color: red; }
+html {
+  font-size: 62.5%; }
+
+body {
+  font: 1.6rem/1.25 Arial, sans-serif;
+  margin: 0 auto; }
+
+#shirt {
+  height: 300px;
+  width: 300px;
+  background-color: darkgray; }
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: .5em; }
+
+h3 {
+  font-size: 1em;
+  color: darkgray; }
+
+#productCost {
+  text-align: right;
+  font-size: 2em;
+  margin: 0; }
+
+.sections {
+  width: 300px;
+  height: 700px;
+  padding-left: 1em;
+  padding: 1em;
+  background-color: aliceblue; }
+
+#size {
+  display: flex;
+  justify-content: center; }
+  #size button {
+    width: 33%;
+    background-color: lightgray;
+    height: 40px;
+    margin: 10px; }
+
+#color {
+  display: flex;
+  justify-content: center; }
+  #color button {
+    width: 33%;
+    height: 40px;
+    margin: 10px; }
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#green {
+  background-color: green; }
+
+#red {
+  background-color: red; }
+
+#black {
+  background-color: black; }
+
+#blue {
+  background-color: blue; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: .5em; }
+  .form input {
+    background-color: lightgray;
+    height: 3em; }
+  .form label {
+    color: gray; }
+
+#country {
+  background-color: lightgray;
+  height: 3em; }
+
+#name {
+  width: 100%; }
+
+.orderProductDetails {
+  display: flex;
+  justify-content: space-between; }

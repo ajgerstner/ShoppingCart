@@ -5,21 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
 		<title>Shoppign Cart</title>
-   <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body class="wrapper">
         
-   
-	<section id="product">
+   <section id="main">
+	<section id="product" class="sections">
 	    <h1>Product Name</h1>
-	    <img src="" alt="picture of shirt">
+	    <div id="shirt"></div>
 	    <p id="productCost">$20.00</p>
 	    <section>
 	        <h3>Select size</h3>
 	        <section id = "size">
-	            <button type="button" id="small" >S</button>
-	            <button type="button" id="medium" >M</button>
-	            <button type="button" id="large">L</button>
+	            <button type="button" id="small" >Small</button>
+	            <button type="button" id="medium" >Medium</button>
+	            <button type="button" id="large">Large</button>
 	        </section>
 	    </section>
 	       <section>
@@ -33,8 +33,9 @@
 	    </section>
 	</section>
 	
-	<section id="shipping">
-    <form>
+	<section id="shipping" class="sections">
+   <h1>Shipping Details</h1>
+    <form id="shipingForm">
            <div class="form">
              <label for="name">Full Name</label>
              <input type="text" id="name" required/>
@@ -59,7 +60,7 @@
              <input type="text" id="zip" required/>
            </div>
            <div class="form">
-               <select name="county" >
+               <select name="country" id="country">
                   <option value="USA">USA</option>
                   <option value="Mexico">Mexico</option>
                   <option value="Canada">Canada</option>
@@ -69,25 +70,25 @@
 	    
 	</section>
 	
-	<section>
+	<section id="order" class="sections" >
 	    <h1>Order Summary</h1>
-	    <div class="oderProductDetails">
+	    <div class="orderProductDetails">
             <p>Product Name </p>
             <p id="orderProduct"></p>
             <p>$20.00</p>
             
 	    </div>
-	    <div class="oderProductDetails">
+	    <div class="orderProductDetails">
             <p id="orderShipping">Shipping </p>
             <p>Free</p>
             
 	    </div>
-	   <div class="oderProductDetails">
+	   <div class="orderProductDetails">
             <p>Total </p>
             <p>$20.00</p>
             
 	    </div>
-        <div class="oderProductDetails">
+        <div class="orderProductDetails">
             <p>Shipping Address</p>
             <p id="orderName"></p>
             <p id="orderAddress"></p>
@@ -97,7 +98,7 @@
 	    <button type="submit" id="completeOrderButton" >Complete Order</button>
 	</section>
 	
-	
+	</section>
 		<footer>
          
 		</footer>
