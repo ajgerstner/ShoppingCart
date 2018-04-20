@@ -42,7 +42,8 @@ h3{
     height: 700px;
     padding-left: 1em;
     padding: 1em;
-     background-color: aliceblue;
+    background-color: aliceblue;
+    
 }
 
 #size{ 
@@ -99,9 +100,32 @@ h3{
         height: 3em;
         
     }
+   
     label{
         color:gray;
     }
+}
+#addresses{
+  
+    display: flex;
+    div{
+        flex-grow:1;
+    }
+    flex-direction:row;
+}
+#cityStateZip{
+     display: flex;
+    overflow: auto;
+    
+        div{
+            input{
+              width:90%;
+            }
+        
+        }
+  
+   
+  flex-direction:row;
 }
 
 #country{
@@ -116,6 +140,21 @@ h3{
 .orderProductDetails{
     display:flex;
     justify-content: space-between;
+    
+}
+
+#completeOrderButton{
+    width: 100%;
+    height:4em;
+    font-size:1em;
+    background-color: green;
+    color:white;
+  
+    
+}
+
+#shippingProductDetails{
+ height:400px;   
     
 }
 //.wrapper{
