@@ -36,6 +36,11 @@ h3{
     margin: 0;
 }
 
+p{
+    color: black;
+}
+
+
 .sections{
   
     width: 300px;
@@ -54,6 +59,9 @@ h3{
         background-color: lightgray;
         height: 40px;
         margin: 10px;
+        &:focus{
+            background-color: red;
+        }
         
     }
 }
@@ -156,6 +164,16 @@ h3{
 #shippingProductDetails{
  height:400px;   
     
+}
+
+#shippingProductDetails{
+    flex-direction:column;
+    justify-content: flex-start;
+    text-align: left;
+    p{
+        color:black;
+        margin: 0 auto;
+    }
 }
 //.wrapper{
   //   max-width: 1200px;

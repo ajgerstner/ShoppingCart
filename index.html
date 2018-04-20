@@ -9,33 +9,44 @@
     </head>
     <body class="wrapper">
         
-   <section id="main">
+   <section>
+   <form id="main">
 	<section id="product" class="sections">
 	    <h1>V Neck Shirt</h1>
 	    <div id="shirt"></div>
 	    <p id="productCost">$20.00</p>
 	    <section>
 	        <h3>Select size</h3>
-	        <section id = "size">
-	            <button type="button" id="small" >Small</button>
-	            <button type="button" id="medium" >Medium</button>
-	            <button type="button" id="large">Large</button>
-	        </section>
+	      <fieldset id = "size" >
+                <label for="small">Small</label>
+                <input type="radio" id="small" name="small" >
+                 <label for="medium">Medium</label>
+                <input type="radio" id="medium" name="medium" >
+                 <label for="large">Large</label>
+                <input type="radio" id="large" name="large" >
+	       
+	     </fieldset>
 	    </section>
 	       <section>
 	        <h3>Select a color</h3>
-	        <section id = "color">
-	            <button type="button" id="green" ></button>
-	            <button type="button" id="red" ></button>
-	            <button type="button" id="black"></button>
-	            <button type="button" id="blue"></button>
-	        </section>
+	        <fieldset id = "size" >
+               
+                <input type="radio" id="green" name="green" >
+                
+                <input type="radio" id="red" name="red" >
+           
+                <input type="radio" id="black" name="black" >
+               
+                <input type="radio" id="blue" name="blue" >
+	       
+	        </fieldset>
+	        
 	    </section>
 	</section>
 	
 	<section id="shipping" class="sections">
    <h1>Shipping Details</h1>
-    <form id="shipingForm">
+    
            <div class="form">
              <label for="name">Full Name</label>
              <input type="text" id="name" required/>
@@ -51,7 +62,7 @@
             </div>
             <div id="address2Div">
              <label for="address2">Address 2</label>
-             <input type="text" id="address2" required/>
+             <input type="text" id="address2" />
             </div>
            </div>
            <div class="form" id="cityStateZip">
@@ -69,13 +80,13 @@
              </div>
            </div>
            <div class="form">
-               <select name="country" id="country">
-                  <option value="USA">USA</option>
+             <select name="country" id="country">
+                 <option value="USA">USA</option>
                   <option value="Mexico">Mexico</option>
                   <option value="Canada">Canada</option>
               </select>
            </div>
-    </form>
+ 
 	    
 	</section>
 	
@@ -100,20 +111,22 @@
         <div class="orderProductDetails" id="shippingProductDetails">
             <p>Shipping Address</p>
             <p id="orderName"></p>
-            <p id="orderAddress"></p>
-            <p id="orderCityStateZip"></p>
+            <p id="orderEmail"></p>
+            <p id="orderAddress1"></p>
+            <p ><span id="orderCity"></span> <span id="orderState"></span> <span id="orderZip"></span></p>
+	        <p id="orderCountry"></p>
 	    </div>
 	     <div class="orderProductDetails">
 	    <button type="submit" id="completeOrderButton" >Complete Order</button>
 	     </div>
 	</section>
-	
+	   </form>
 	</section>
 		<footer>
          
 		</footer>
 		
-		<script src=""></script>
+		<script src="JS/content.js"></script>
 		
 	</body>
 	
