@@ -31,8 +31,7 @@ p {
   width: 300px;
   height: 700px;
   padding-left: 1em;
-  padding: 1em;
-  background-color: aliceblue; }
+  padding: 1em; }
 
 [type="radio"] {
   border: 0;
@@ -45,7 +44,9 @@ p {
   width: 1px; }
 
 [type="radio"]:checked + span {
-  border: .2em solid yellow; }
+  padding: .5rem;
+  border: .2em solid yellow;
+  box-shadow: 0 0 0 3px #444; }
 
 #size {
   border: 0; }
@@ -127,14 +128,16 @@ p {
   color: white; }
 
 #shippingProductDetails {
+  display: inline-block;
   height: 400px; }
-
-#shippingProductDetails {
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left; }
   #shippingProductDetails p {
     margin: 0 auto; }
+
+#orderComplete {
+  width: 175px;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .error {
   color: red;

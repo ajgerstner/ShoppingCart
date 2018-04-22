@@ -178,6 +178,23 @@ submit.addEventListener("click", (event) => {
 }
     if(errorMessages.allValuesSame()){
    alert("Order Submitted")
+        
+        const product = document.getElementById("product");  
+        const shipping = document.getElementById("shipping"); 
+        product.remove();
+        shipping.remove();
+
+
+        const orderSummary = document.getElementById("orderSummary");  
+    
+         orderSummary.insertAdjacentHTML('afterend','<h1 >Order Completed</h1>');  
+         orderSummary.remove();
+        
+        
+        const completeOrderButton = document.getElementById("completeOrderButton"); 
+         completeOrderButton.insertAdjacentHTML('afterend','<img src="form-assets/circle-check.png" alt="order complete" id="orderComplete">');  
+         completeOrderButton.remove();
+        
    }
     
 });
