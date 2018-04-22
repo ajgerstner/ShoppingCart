@@ -7,6 +7,7 @@ const email= document.getElementById("email");
 const address1 = document.getElementById("address1");
 const city = document.getElementById("city");
 const state = document.getElementById("state");
+const zip = document.getElementById("zip");
 const country = document.getElementById("country");
 const submit = document.getElementById("completeOrderButton");
 
@@ -175,9 +176,9 @@ submit.addEventListener("click", (event) => {
     }
 
     return true;
-}
+};
     if(errorMessages.allValuesSame()){
-   alert("Order Submitted")
+   alert("Thanks for your Order!!Order has been successfully Submitted");
         
         const product = document.getElementById("product");  
         const shipping = document.getElementById("shipping"); 

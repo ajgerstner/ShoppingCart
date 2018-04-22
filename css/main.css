@@ -45,8 +45,8 @@ p {
 
 [type="radio"]:checked + span {
   padding: .5rem;
-  border: .2em solid yellow;
-  box-shadow: 0 0 0 3px #444; }
+  box-shadow: 0 0 0 3px #444;
+  border: .2em solid yellow; }
 
 #size {
   border: 0; }
@@ -72,16 +72,16 @@ p {
   flex-wrap: wrap;
   justify-content: center; }
 
-#green {
+#green1 {
   background-color: green; }
 
-#red {
+#red1 {
   background-color: red; }
 
-#black {
+#black1 {
   background-color: black; }
 
-#blue {
+#blue1 {
   background-color: blue; }
 
 .form {
