@@ -30,10 +30,7 @@ document.getElementById("black").addEventListener("click",function(){shirtColor=
 document.getElementById("blue").addEventListener("click",function(){shirtColor="Blue";orderColor.innerHTML= shirtColor;},false);
 
 
-//document.getElementById("searchInput").addEventListener("search", SearchFunction);
-
-//document.getElementById("name").oninput=handler;
-
+//class for verifing errors with order and creating messages for the errors
 
 
 class CheckErrors {
@@ -127,8 +124,10 @@ submit.addEventListener("click", (event) => {
   let validateForm = new CheckErrors(name, "name");
   let errorMessages = validateForm.getMessages();
    
+    const htmlIdArray = ["name","email"];
+   // alert(htmlIdArray[0]);
      
-    
+ 
     
   
   console.log(errorMessages);
