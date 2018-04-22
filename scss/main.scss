@@ -1,0 +1,222 @@
+//cd ShoppingCart
+
+$primary-font:Arial, sans-serif;
+
+html {
+	//Makes 1 rem equl to 10px
+    
+    font-size: 62.5% ;
+}
+
+body{
+    font: 1.6rem/ 1.25  $primary-font;
+   margin: 0 auto;
+    
+    
+}
+
+#shirt{
+    height: 300px;
+    width: 300px;
+    background-color: darkgray;
+}
+h1{
+   font-size: 2em;
+   margin: 0;
+    padding:.5em;
+}
+h3{
+   font-size: 1em;
+    color:darkgray;
+    
+}
+#productCost{
+    text-align: right;
+    font-size: 2em;
+    margin: 0;
+}
+
+p{
+    color: black;
+}
+
+
+.sections{
+  
+    width: 300px;
+    height: 700px;
+    padding-left: 1em;
+    padding: 1em;
+    background-color: aliceblue;
+    
+}
+
+//hidding the radio button
+
+[type="radio"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+  
+}
+
+[type="radio"]:checked + span{
+   
+      border: .2em solid yellow;
+    
+}
+ 
+
+
+#size{
+    border: 0;
+    
+    div{
+    display: flex;
+      
+   
+    
+span{ 
+        
+      //  width: 33%;
+        padding: 1em;
+        margin: 10px;
+        background-color: lightgray;
+        }
+    }
+}
+
+
+
+
+
+#color{
+     border: 0;
+    div{
+        margin-top: 1em;
+       display: flex;
+       // justify-content:center; 
+       // flex-direction: row ;
+  
+    span{
+
+       padding-left: 3em;
+        padding-top: 1.5em;
+        margin: 10px;
+        
+    }
+        
+    }
+}
+
+
+#main{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+   
+}
+
+#green{
+    background-color: green;
+}
+#red{
+    background-color: red;
+}
+#black{
+    background-color: black;
+}
+#blue{
+    background-color: blue;
+}
+
+.form{
+    display: flex;
+    flex-direction:column;
+    padding: .5em;
+    input{
+        background-color: lightgray;
+        height: 3em;
+        
+    }
+    #name:valid,#email:valid, #address1:valid, #zip:valid, #state:valid, #city:valid, {
+        border: .25em solid green;
+    }
+    
+   
+    label{
+        color:gray;
+    }
+}
+#addresses{
+  
+    display: flex;
+    div{
+        flex-grow:1;
+    }
+    flex-direction:row;
+}
+#cityStateZip{
+     display: flex;
+    overflow: auto;
+    
+        div{
+            input{
+              width:90%;
+            }
+        
+        }
+  
+   
+  flex-direction:row;
+}
+
+#country{
+    background-color: lightgray;
+    height: 3em;
+}
+#name{
+    width:100%;
+}
+
+
+.orderProductDetails{
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+#completeOrderButton{
+    width: 100%;
+    height:4em;
+    font-size:1em;
+    background-color: green;
+    color:white;
+  
+    
+}
+
+#shippingProductDetails{
+ height:400px;   
+    
+}
+
+#shippingProductDetails{
+    flex-direction:column;
+    justify-content: flex-start;
+    text-align: left;
+    p{
+
+        margin: 0 auto;
+    }
+}
+
+
+.error{
+    color:red;
+    font-size: .75em;
+}
