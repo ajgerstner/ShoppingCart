@@ -1,39 +1,47 @@
+const orderSize=document.getElementById("orderSize");
+const orderColor=document.getElementById("orderColor");
 var shirtSize;
 var shirtColor;
 const name = document.getElementById("name");
 const email= document.getElementById("email");
 const address1 = document.getElementById("address1");
-const address2 = document.getElementById("address2");
 const city = document.getElementById("city");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
 const submit = document.getElementById("completeOrderButton");
+const error= document.getElementById("error");
+const size=document.getElementById("size");
+const shippingProductDetails= document.getElementById("shippingProductDetails");
 
 
 
 
-document.getElementById("small").addEventListener("click",function(){shirtSize="S";alert(shirtSize);},false);
-document.getElementById("medium").addEventListener("click",function(){shirtSize="M";alert(shirtSize);},false);
-document.getElementById("large").addEventListener("click",function(){shirtSize="L";alert(shirtSize);},false);
+//declare shirt size and add it to the order form
+document.getElementById("small").addEventListener("click",function(){shirtSize="S";
+orderSize.innerHTML= shirtSize;  alert(shirtSize);},false);
+document.getElementById("medium").addEventListener("click",function(){shirtSize="M";orderSize.innerHTML= shirtSize; alert(shirtSize);},false);
+document.getElementById("large").addEventListener("click",function(){shirtSize="L"; orderSize.innerHTML= shirtSize; alert(shirtSize);},false);
 
-
-document.getElementById("green").addEventListener("click",function(){shirtColor="Green";alert(shirtColor);},false);
-document.getElementById("red").addEventListener("click",function(){shirtColor="Red";alert(shirtColor);},false);
-document.getElementById("black").addEventListener("click",function(){shirtColor="Black";alert(shirtColor);},false);
-document.getElementById("blue").addEventListener("click",function(){shirtColor="Blue";alert(shirtColor);},false);
+//declare shirt color and add it to the order form
+document.getElementById("green").addEventListener("click",function(){shirtColor="Green";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
+document.getElementById("red").addEventListener("click",function(){shirtColor="Red";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
+document.getElementById("black").addEventListener("click",function(){shirtColor="Black";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
+document.getElementById("blue").addEventListener("click",function(){shirtColor="Blue";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
 
 
 //document.getElementById("searchInput").addEventListener("search", SearchFunction);
 
 //document.getElementById("name").oninput=handler;
 
-class CheckName {
+
+
+class CheckErrors {
   constructor(input, type) {
-    
-      
-      this.input = name;
+   
+    this.input = input;
     this.type = type;
     this.errors = [];
+    
   }
   
   addError(message) {
@@ -41,38 +49,88 @@ class CheckName {
   }
   
   getMessages() {
-    const status = this.input.validity;
+   // const status = this.input.validity;
   
-    if (!this.input.value.match(/[A-Za-z]/g)) {
-      this.addError('Entry Must not contain numbers');
+     if(shirtSize == null) {
+         this.addError("Must select a shirt Size");
+     }else {
+          this.addError("Good");
+    }
+       if(shirtColor == null) {
+         this.addError("Must select a shirt Color");
+     }else {
+          this.addError("Good");
+    }
+      
+    if (!name.value.match(/[A-Za-z]\s[A-Za-z]/g)) {
+      this.addError("Full name must not contain numbers and must have a space between first and last name");
+    } else {
+          this.addError("Good");
+    }
+   if (!email.validity.valid) {
+      this.addError("Email must be formated correctly");
+    }else {
+          this.addError("Good");
+    }
+    if(!address1.value.match(/([0-9]\s[A-Za-z])/g)){
+        this.addError("Address must have number then name of street");
+    }else {
+          this.addError("Good");
+    }
+      if (!city.validity.valid ) {
+      this.addError("City must not contain numbers");
+    }else {
+          this.addError("Good");
+    }
+       if (!state.validity.valid ) {
+      this.addError("State must not contain numbers");
+    }else {
+          this.addError("Good");
+    }
+       if (!zip.validity.valid ) {
+      this.addError("Zip must not contain letters");
+    }else {
+          this.addError("Good");
+    }
+      if(country == null){
+          
+         this.addError("Please select a County");
+         }else {
+          this.addError("Good");
     }
     return this.errors;
   }
   
 }
 
-
+ 
+var nInsert;
 // Set up submit listener
+
 
 submit.addEventListener("click", (event) => {
   event.preventDefault(); // this will stop the standard form submission.
   
-  let validateName = new CheckName(name, "name");
-  let errorMessages = validateName.getMessages();
+  let validateForm = new CheckErrors(name, "name");
+  let errorMessages = validateForm.getMessages();
   console.log(errorMessages);
-  if (errorMessages.length >0) {
-    errorMessages.forEach( (err) => {  
-        
-      var nInsert=name.insertAdjacentHTML('afterend', '<p id="error">' + err + '</p>');
-    }
-    );
-  } else {
+  if (errorMessages.length > 0 ) {
+      if(errorMessages[0] != "Good"){
+      size.insertAdjacentHTML('afterend', '<p id="error">' + errorMessages[1] + '</p>');
+      } 
+     for (i = 0; i < errorMessages.length; i++){
+       
+       //   if(errorMessages[i] !="Good"){
+          orderCountry.insertAdjacentHTML('afterend', '<p id="error">' + errorMessages[i] + '</p>');
+         
+         
+       //   }
+         
+         
+      }
       
-     var error= document.getElementById("error");
-     if(error){
-      error.remove();
-  }
-    alert('Form Submitted');
+  } else {
+     alert('Form Submitted');
   }
 });
 
@@ -92,38 +150,39 @@ submit.addEventListener("click", (event) => {
 
 
 //created input listeners to display the shipping info
-document.getElementById("name").addEventListener("input",function(){
+
+name.addEventListener("input",function(){
  var orderName=document.getElementById("orderName");
 orderName.innerHTML= document.getElementById("name").value;   
    },false);
 
 
-document.getElementById("email").addEventListener("input",function(){
+email.addEventListener("input",function(){
  var orderEmail=document.getElementById("orderEmail");
 orderEmail.innerHTML= document.getElementById("email").value;   
    },false);
 
-document.getElementById("address1").addEventListener("input",function(){
+address1.addEventListener("input",function(){
  var orderAddress1=document.getElementById("orderAddress1");
 orderAddress1.innerHTML= document.getElementById("address1").value;   
    },false);
 
-document.getElementById("city").addEventListener("input",function(){
+city.addEventListener("input",function(){
  var orderCity=document.getElementById("orderCity");
 orderCity.innerHTML= document.getElementById("city").value;   
    },false);
 
-document.getElementById("state").addEventListener("input",function(){
+state.addEventListener("input",function(){
  var orderState=document.getElementById("orderState");
 orderState.innerHTML= document.getElementById("state").value;   
    },false);
 
-document.getElementById("zip").addEventListener("input",function(){
+zip.addEventListener("input",function(){
  var orderZip=document.getElementById("orderZip");
 orderZip.innerHTML= document.getElementById("zip").value;   
    },false);
 
-document.getElementById("country").addEventListener("input",function(){
+country.addEventListener("input",function(){
  var orderCountry=document.getElementById("orderCountry");
 orderCountry.innerHTML= document.getElementById("country").value;   
    },false);

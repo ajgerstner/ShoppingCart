@@ -134,5 +134,8 @@ p {
   justify-content: flex-start;
   text-align: left; }
   #shippingProductDetails p {
-    color: black;
     margin: 0 auto; }
+
+#error {
+  color: red;
+  font-size: .75em; }
