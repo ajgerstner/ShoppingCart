@@ -223,10 +223,10 @@ orderName.innerHTML= name.value;
    },false);
 
 
-email.addEventListener("input",function(){
- const orderEmail=document.getElementById("orderEmail");
-orderEmail.innerHTML= email.value;   
-   },false);
+//email.addEventListener("input",function(){
+ //const orderEmail=document.getElementById("orderEmail");
+//orderEmail.innerHTML= email.value;   
+  // },false);
 
 address1.addEventListener("input",function(){
  const orderAddress1=document.getElementById("orderAddress1");
