@@ -9,8 +9,9 @@ const city = document.getElementById("city");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
 const submit = document.getElementById("completeOrderButton");
-const error= document.getElementById("error");
+
 const size=document.getElementById("size");
+const color=document.getElementById("color");
 const shippingProductDetails= document.getElementById("shippingProductDetails");
 
 
@@ -18,15 +19,15 @@ const shippingProductDetails= document.getElementById("shippingProductDetails");
 
 //declare shirt size and add it to the order form
 document.getElementById("small").addEventListener("click",function(){shirtSize="S";
-orderSize.innerHTML= shirtSize;  alert(shirtSize);},false);
-document.getElementById("medium").addEventListener("click",function(){shirtSize="M";orderSize.innerHTML= shirtSize; alert(shirtSize);},false);
-document.getElementById("large").addEventListener("click",function(){shirtSize="L"; orderSize.innerHTML= shirtSize; alert(shirtSize);},false);
+orderSize.innerHTML= shirtSize; },false);
+document.getElementById("medium").addEventListener("click",function(){shirtSize="M";orderSize.innerHTML= shirtSize;},false);
+document.getElementById("large").addEventListener("click",function(){shirtSize="L"; orderSize.innerHTML= shirtSize;},false);
 
 //declare shirt color and add it to the order form
-document.getElementById("green").addEventListener("click",function(){shirtColor="Green";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
-document.getElementById("red").addEventListener("click",function(){shirtColor="Red";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
-document.getElementById("black").addEventListener("click",function(){shirtColor="Black";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
-document.getElementById("blue").addEventListener("click",function(){shirtColor="Blue";orderColor.innerHTML= shirtColor;alert(shirtColor);},false);
+document.getElementById("green").addEventListener("click",function(){shirtColor="Green";orderColor.innerHTML= shirtColor;},false);
+document.getElementById("red").addEventListener("click",function(){shirtColor="Red";orderColor.innerHTML= shirtColor;},false);
+document.getElementById("black").addEventListener("click",function(){shirtColor="Black";orderColor.innerHTML= shirtColor;},false);
+document.getElementById("blue").addEventListener("click",function(){shirtColor="Blue";orderColor.innerHTML= shirtColor;},false);
 
 
 //document.getElementById("searchInput").addEventListener("search", SearchFunction);
@@ -92,7 +93,8 @@ class CheckErrors {
     }else {
           this.addError("Good");
     }
-      if(country == null){
+      
+      if(country.value === ""){
           
          this.addError("Please select a County");
          }else {
@@ -108,30 +110,77 @@ var nInsert;
 // Set up submit listener
 
 
+
+
 submit.addEventListener("click", (event) => {
   event.preventDefault(); // this will stop the standard form submission.
+  var error= document.getElementById("error");
+ 
   
+       const errorClass = document.getElementsByClassName('error');
+        if(errorClass){
+      while(errorClass[0]) {
+          errorClass[0].parentNode.removeChild(errorClass[0]);
+        };
+        }
+    
   let validateForm = new CheckErrors(name, "name");
   let errorMessages = validateForm.getMessages();
+   
+     
+    
+    
+  
   console.log(errorMessages);
   if (errorMessages.length > 0 ) {
-      if(errorMessages[0] != "Good"){
-      size.insertAdjacentHTML('afterend', '<p id="error">' + errorMessages[1] + '</p>');
+     //could put for loop but when I created a array of the names it keep giving me a error 
+           
+      if(errorMessages[0] != "Good" ){
+      size.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[0] + '</p>');
+      }  
+      if(errorMessages[1] != "Good"){
+      color.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[1] + '</p>');
       } 
-     for (i = 0; i < errorMessages.length; i++){
-       
-       //   if(errorMessages[i] !="Good"){
-          orderCountry.insertAdjacentHTML('afterend', '<p id="error">' + errorMessages[i] + '</p>');
-         
-         
-       //   }
-         
-         
-      }
-      
-  } else {
-     alert('Form Submitted');
-  }
+        if(errorMessages[2] != "Good"){
+      name.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[2] + '</p>');
+      } 
+       if(errorMessages[3] != "Good"){
+      email.insertAdjacentHTML('afterend', '<p class="error">' + errorMessages[3] + '</p>');
+      } 
+      if(errorMessages[4] != "Good"){
+      address1.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[4] + '</p>');
+      } 
+       if(errorMessages[5] != "Good"){
+      city.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[5] + '</p>');
+      } 
+      if(errorMessages[6] != "Good"){
+      state.insertAdjacentHTML('afterend', '<p   class="error">' + errorMessages[6] + '</p>');
+      } 
+        if(errorMessages[7] != "Good"){
+      zip.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[7] + '</p>');
+      } 
+        if(errorMessages[8] != "Good"){
+      country.insertAdjacentHTML('afterend', '<p  class="error">' + errorMessages[8] + '</p>');
+      } 
+
+   
+  } 
+   
+    //checking to see if all items in array are the same which is "Good" key word
+    Array.prototype.allValuesSame = function() {
+
+    for(var i = 1; i < this.length; i++)
+    {
+        if(this[i] !== this[0])
+            return false;
+    }
+
+    return true;
+}
+    if(errorMessages.allValuesSame()){
+   alert("Order Submitted")
+   }
+    
 });
 
 
@@ -152,37 +201,37 @@ submit.addEventListener("click", (event) => {
 //created input listeners to display the shipping info
 
 name.addEventListener("input",function(){
- var orderName=document.getElementById("orderName");
-orderName.innerHTML= document.getElementById("name").value;   
+ const orderName=document.getElementById("orderName");
+orderName.innerHTML= name.value;   
    },false);
 
 
 email.addEventListener("input",function(){
- var orderEmail=document.getElementById("orderEmail");
-orderEmail.innerHTML= document.getElementById("email").value;   
+ const orderEmail=document.getElementById("orderEmail");
+orderEmail.innerHTML= email.value;   
    },false);
 
 address1.addEventListener("input",function(){
- var orderAddress1=document.getElementById("orderAddress1");
-orderAddress1.innerHTML= document.getElementById("address1").value;   
+ const orderAddress1=document.getElementById("orderAddress1");
+orderAddress1.innerHTML= address1.value;   
    },false);
 
 city.addEventListener("input",function(){
- var orderCity=document.getElementById("orderCity");
-orderCity.innerHTML= document.getElementById("city").value;   
+ const orderCity=document.getElementById("orderCity");
+orderCity.innerHTML= city.value;   
    },false);
 
 state.addEventListener("input",function(){
- var orderState=document.getElementById("orderState");
-orderState.innerHTML= document.getElementById("state").value;   
+ const orderState=document.getElementById("orderState");
+orderState.innerHTML= state.value;   
    },false);
 
 zip.addEventListener("input",function(){
- var orderZip=document.getElementById("orderZip");
-orderZip.innerHTML= document.getElementById("zip").value;   
+  const orderZip=document.getElementById("orderZip");
+orderZip.innerHTML= zip.value;   
    },false);
 
 country.addEventListener("input",function(){
- var orderCountry=document.getElementById("orderCountry");
-orderCountry.innerHTML= document.getElementById("country").value;   
+ const orderCountry=document.getElementById("orderCountry");
+orderCountry.innerHTML= country.value;   
    },false);

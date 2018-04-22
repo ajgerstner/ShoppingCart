@@ -90,7 +90,7 @@ p {
   .form input {
     background-color: lightgray;
     height: 3em; }
-  .form #name:valid, .form #email:valid, .form #address1:valid, .form #zip:valid, .form #state:valid, .form #city:valid, .form #country:valid {
+  .form #name:valid, .form #email:valid, .form #address1:valid, .form #zip:valid, .form #state:valid, .form #city:valid {
     border: .25em solid green; }
   .form label {
     color: gray; }
@@ -136,6 +136,6 @@ p {
   #shippingProductDetails p {
     margin: 0 auto; }
 
-#error {
+.error {
   color: red;
   font-size: .75em; }

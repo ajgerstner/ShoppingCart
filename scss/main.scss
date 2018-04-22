@@ -143,9 +143,11 @@ span{
         height: 3em;
         
     }
-    #name:valid,#email:valid, #address1:valid, #zip:valid, #state:valid, #city:valid, #country:valid{
+    #name:valid,#email:valid, #address1:valid, #zip:valid, #state:valid, #city:valid, {
         border: .25em solid green;
     }
+    
+   
     label{
         color:gray;
     }
@@ -214,7 +216,7 @@ span{
 }
 
 
-#error{
+.error{
     color:red;
     font-size: .75em;
 }
