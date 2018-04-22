@@ -13,32 +13,50 @@
    <form id="main">
 	<section id="product" class="sections">
 	    <h1>V Neck Shirt</h1>
-	    <div id="shirt"></div>
+	    <div id="shirt"><img src="" alt="v neck t shirt" id="shirt"></div>
 	    <p id="productCost">$20.00</p>
 	    <section>
 	        <h3>Select size</h3>
+	     
 	      <fieldset id = "size" >
-                <label for="small">Small</label>
-                <input type="radio" id="small" name="small" >
-                 <label for="medium">Medium</label>
-                <input type="radio" id="medium" name="medium" >
-                 <label for="large">Large</label>
-                <input type="radio" id="large" name="large" >
-	       
+               <div>
+                <label for="small">
+                <input type="radio" value="small" name="size" id="small"  >
+                <span >Small</span>
+                </label>
+                 <label for="medium">
+                <input type="radio" value="medium" name="size" id="medium"  >
+                <span>Medium</span>
+                </label>
+                 <label for="large">
+                <input type="radio" value="large" name="size" id="large" >
+                <span>Large</span>
+                </label>
+	           </div>
 	     </fieldset>
+	  
 	    </section>
 	       <section>
 	        <h3>Select a color</h3>
-	        <fieldset id = "size" >
-               
-                <input type="radio" id="green" name="green" >
-                
-                <input type="radio" id="red" name="red" >
-           
-                <input type="radio" id="black" name="black" >
-               
-                <input type="radio" id="blue" name="blue" >
-	       
+	        <fieldset id = "color" >
+              <div>
+               <label for="green">
+                <input type="radio" id="green" name="color" >
+                <span id="green"></span>
+                </label>
+                <label for="red">
+                <input type="radio" id="red" name="color" >
+                 <span id="red"></span>
+                </label>
+                 <label for="black">
+                <input type="radio" id="black" name="color" >
+                 <span id="black"></span>
+                </label>
+                <label for="blue">
+                <input type="radio" id="blue" name="color" >
+	            <span id="blue"></span>
+                </label>
+                </div>
 	        </fieldset>
 	        
 	    </section>
@@ -49,7 +67,7 @@
     
            <div class="form">
              <label for="name">Full Name</label>
-             <input type="text" id="name" required/>
+             <input type="text" id="name" required pattern="[A-Za-z]+"/>
            </div>
            <div class="form">
              <label for="email">Email</label>
@@ -68,18 +86,19 @@
            <div class="form" id="cityStateZip">
              <div >
              <label for="city">City</label>
-             <input type="text" id="city" required/>
+             <input type="text" id="city" required pattern="[A-Za-z]+"/>
              </div>
              <div >
              <label for="state">State</label>
-             <input type="text" id="state" required/>
+             <input type="text" id="state" required pattern="[A-Za-z]+" minlength="2" maxlength="2"/>
              </div>
              <div  >
              <label for="zip">Zip</label>
-             <input type="text" id="zip"required/>
+             <input type="text" id="zip" required pattern="\d+" minlength="5" maxlength= "9"/>
              </div>
            </div>
            <div class="form">
+             <label >Country</label>
              <select name="country" id="country">
                  <option value="USA">USA</option>
                   <option value="Mexico">Mexico</option>

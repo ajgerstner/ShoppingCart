@@ -1,6 +1,6 @@
 var shirtSize;
 var shirtColor;
-var name = document.getElementById("name");
+const name = document.getElementById("name");
 const email= document.getElementById("email");
 const address1 = document.getElementById("address1");
 const address2 = document.getElementById("address2");
@@ -26,6 +26,68 @@ document.getElementById("blue").addEventListener("click",function(){shirtColor="
 //document.getElementById("searchInput").addEventListener("search", SearchFunction);
 
 //document.getElementById("name").oninput=handler;
+
+class CheckName {
+  constructor(input, type) {
+    
+      
+      this.input = name;
+    this.type = type;
+    this.errors = [];
+  }
+  
+  addError(message) {
+    this.errors.push(message);
+  }
+  
+  getMessages() {
+    const status = this.input.validity;
+  
+    if (!this.input.value.match(/[A-Za-z]/g)) {
+      this.addError('Entry Must not contain numbers');
+    }
+    return this.errors;
+  }
+  
+}
+
+
+// Set up submit listener
+
+submit.addEventListener("click", (event) => {
+  event.preventDefault(); // this will stop the standard form submission.
+  
+  let validateName = new CheckName(name, "name");
+  let errorMessages = validateName.getMessages();
+  console.log(errorMessages);
+  if (errorMessages.length >0) {
+    errorMessages.forEach( (err) => {  
+        
+      var nInsert=name.insertAdjacentHTML('afterend', '<p id="error">' + err + '</p>');
+    }
+    );
+  } else {
+      
+     var error= document.getElementById("error");
+     if(error){
+      error.remove();
+  }
+    alert('Form Submitted');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
