@@ -13,7 +13,7 @@ const submit = document.getElementById("completeOrderButton");
 
 const size=document.getElementById("size");
 const color=document.getElementById("color");
-const shippingProductDetails= document.getElementById("shippingProductDetails");
+
 
 
 
@@ -50,12 +50,12 @@ class CheckErrors {
   getMessages() {
    // const status = this.input.validity;
   
-     if(shirtSize == null) {
+     if(shirtSize === null) {
          this.addError("Must select a shirt Size");
      }else {
           this.addError("Good");
     }
-       if(shirtColor == null) {
+       if(shirtColor === null) {
          this.addError("Must select a shirt Color");
      }else {
           this.addError("Good");
@@ -104,7 +104,7 @@ class CheckErrors {
 }
 
  
-var nInsert;
+
 // Set up submit listener
 
 
@@ -112,14 +112,14 @@ var nInsert;
 
 submit.addEventListener("click", (event) => {
   event.preventDefault(); // this will stop the standard form submission.
-  var error= document.getElementById("error");
+ 
  
   
        const errorClass = document.getElementsByClassName('error');
         if(errorClass){
       while(errorClass[0]) {
           errorClass[0].parentNode.removeChild(errorClass[0]);
-        };
+        }
         }
     
   let validateForm = new CheckErrors(name, "name");
@@ -174,7 +174,7 @@ submit.addEventListener("click", (event) => {
     return true;
 };
     if(errorMessages.allValuesSame()){
-   alert("Thanks for your Order!!Order has been successfully Submitted");
+  
         
         const product = document.getElementById("product");  
         const shipping = document.getElementById("shipping"); 
