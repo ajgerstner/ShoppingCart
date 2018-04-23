@@ -17,7 +17,7 @@ h1 {
 
 h3 {
   font-size: 1em;
-  color: darkgray; }
+  color: dimgray; }
 
 #productCost {
   text-align: right;
@@ -106,7 +106,7 @@ p {
   .form #name:valid, .form #email:valid, .form #address1:valid, .form #zip:valid, .form #state:valid, .form #city:valid {
     border: .25em solid green; }
   .form label {
-    color: gray; }
+    color: dimgray; }
 
 #addresses {
   display: flex;
