@@ -63,7 +63,7 @@ p {
     margin-top: 1em;
     display: flex; }
     #color div span {
-      padding-left: 3em;
+      padding-left: 2em;
       padding-top: 1.5em;
       margin: 10px; }
 
@@ -74,15 +74,27 @@ p {
 
 #green1 {
   background-color: green; }
+  #green1 span {
+    color: green;
+    font-size: 0em; }
 
 #red1 {
   background-color: red; }
+  #red1 span {
+    color: red;
+    font-size: 0em; }
 
 #black1 {
   background-color: black; }
+  #black1 span {
+    color: black;
+    font-size: 0em; }
 
 #blue1 {
   background-color: blue; }
+  #blue1 span {
+    color: blue;
+    font-size: 0em; }
 
 .form {
   display: flex;
@@ -127,9 +139,19 @@ p {
   background-color: green;
   color: white; }
 
+#product {
+  border: 1px solid black; }
+
+#shipping {
+  background-color: #f4f4f4;
+  border: 1px solid black; }
+
+#order {
+  border: 1px solid black; }
+
 #shippingProductDetails {
   display: inline-block;
-  height: 400px; }
+  height: 200px; }
   #shippingProductDetails p {
     margin: 0 auto; }
 

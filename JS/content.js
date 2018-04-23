@@ -19,10 +19,10 @@ const shippingProductDetails= document.getElementById("shippingProductDetails");
 
 
 //declare shirt size and add it to the order form
-document.getElementById("small").addEventListener("click",function(){shirtSize="S";
+document.getElementById("small").addEventListener("click",function(){shirtSize="Small";
 orderSize.innerHTML= shirtSize; },false);
-document.getElementById("medium").addEventListener("click",function(){shirtSize="M";orderSize.innerHTML= shirtSize;},false);
-document.getElementById("large").addEventListener("click",function(){shirtSize="L"; orderSize.innerHTML= shirtSize;},false);
+document.getElementById("medium").addEventListener("click",function(){shirtSize="Medium";orderSize.innerHTML= shirtSize;},false);
+document.getElementById("large").addEventListener("click",function(){shirtSize="Large"; orderSize.innerHTML= shirtSize;},false);
 
 //declare shirt color and add it to the order form
 document.getElementById("green").addEventListener("click",function(){shirtColor="Green";orderColor.innerHTML= shirtColor;},false);
@@ -94,7 +94,7 @@ class CheckErrors {
       
       if(country.value === ""){
           
-         this.addError("Please select a County");
+         this.addError("Please select a Country");
          }else {
           this.addError("Good");
     }
@@ -125,12 +125,8 @@ submit.addEventListener("click", (event) => {
   let validateForm = new CheckErrors(name, "name");
   let errorMessages = validateForm.getMessages();
    
-    const htmlIdArray = ["name","email"];
-   // alert(htmlIdArray[0]);
-     
+
  
-    
-  
   console.log(errorMessages);
   if (errorMessages.length > 0 ) {
      //could put for loop but when I created a array of the names it keep giving me a error 
