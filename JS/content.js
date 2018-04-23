@@ -50,12 +50,12 @@ class CheckErrors {
   getMessages() {
    // const status = this.input.validity;
   
-     if(shirtSize === null) {
+     if(shirtSize == null) {
          this.addError("Must select a shirt Size");
      }else {
           this.addError("Good");
     }
-       if(shirtColor === null) {
+       if(shirtColor == null) {
          this.addError("Must select a shirt Color");
      }else {
           this.addError("Good");
